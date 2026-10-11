@@ -2,39 +2,10 @@ let tasks=[]
 let editingId=null
 
 function loadData(){
-    const saved=localStorage.getItem('codynnflowTasks')
+    const saved=localStorage.getItem('appTaskManagerTasks')
     if(saved) tasks= JSON.parse(saved);
     else
-        tasks=[
-    {
-        id:1,
-        title:"Evaluate the addition and deletion of user IDs",
-        status:"pending",
-        priority:"minor",
-        completed:false,
-    },
-     {
-        id:2,
-        title:"Identify the implementation team",
-        status:"progress",
-        priority:"normal",
-        completed:false,
-    },
-     {
-        id:3,
-        title:"Batch schedule download/process",
-        status:"pending",
-        priority:"critical",
-        completed:false,
-    },
-     {
-        id:4,
-        title:"Monitor system performance and adjust hardware",
-        status:"pending",
-        priority:"minor",
-        completed:false,
-    },
-];
+        tasks=[];
 updateGreeting()
 renderTasks()
 }
@@ -42,11 +13,11 @@ function updateGreeting(){
     const hour= new Date().getHours();
     let greet="Good Morning"
     if(hour>=12 && hour<18)greet="Good Afternoon"
-   else if(hour>=18)greet="Good Evening";
-   document.getElementById("greeting").textContent=`${greet},Codynn`
+   else if(hour>=18)greet="Good Evening"
+   document.getElementById("greeting").textContent=`${greet}!`
 }
 function saveData(){
-    localStorage.setItem("codynnflowTasks",JSON.stringify(tasks))
+    localStorage.setItem("appTaskManagerTasks",JSON.stringify(tasks))
 }
 
 function renderTasks(){
@@ -67,7 +38,7 @@ function renderTasks(){
                     <div class="priority-badge priority-${t.priority}">
                         <i class="fas fa-circle"></i> ${t.priority.charAt(0).toUpperCase()+t.priority.slice(1)}
                     </div>
-                    <div class="avatar">CF</div>
+                    <div class="avatar">KB</div>
                     <button class="icon-btn" style="width:30px;height:30px; " onclick="editTask(${t.id})">
                         <i class="fas fa-pen" style="font-size:12px;"></i>
                     </button>
@@ -88,7 +59,7 @@ function renderTasks(){
                     <div class="priority-badge priority-${t.priority}">
                         <i class="fas fa-circle"></i> ${t.priority.charAt(0).toUpperCase()+t.priority.slice(1)}
                     </div>
-                    <div class="avatar">CF</div>
+                    <div class="avatar">KB</div>
                     <button class="icon-btn" style="width:30px;height:30px; " onclick="editTask(${t.id})">
                         <i class="fas fa-pen" style="font-size:12px;"></i>
                     </button>

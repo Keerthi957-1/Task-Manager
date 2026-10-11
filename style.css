@@ -170,7 +170,7 @@ color:#1f2937;
     position: relative;
 }
 .task-checkbox.completed::after{
-    content:'✅';
+    content:'✓';
     position:absolute;
     color:white;
     font-size:12px;
@@ -201,7 +201,7 @@ color:#1f2937;
     color:#f59e0b;
 }
 .status-progress{
-    background:#dbeafe;;
+    background:#dbeafe;
     color:#3b82f6;
 }
 .status-completed{
@@ -356,7 +356,7 @@ border-color:#8b5cf6;
 .btn-primary:hover{
     background:#7c3aed;
     transform:translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139,92,246,0);
+    box-shadow: 0 4px 12px rgba(139,92,246,0.3);
 }
 .btn-secondary{
     background:#f3f4f6;
